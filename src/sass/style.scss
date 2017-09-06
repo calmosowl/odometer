@@ -1,0 +1,231 @@
+.jptb-top-panel {
+	box-sizing: border-box;
+}
+
+.jptb-top-panel * {
+	box-sizing: inherit;
+}
+
+.jptb-top-panel *:before, .jptb-top-panel *:after {
+	box-sizing: inherit;
+}
+
+$top-panel-height: 184px;
+$font-family: Inconsolata, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$con: 20px;
+$deep: $top-panel-height - 4px;
+$angle: 36deg;
+
+@mixin transform($transforms) {
+	transform: $transforms;
+}
+// rotate
+@mixin rotate3d($x, $y, $z, $deg) {
+	@include transform(rotate3d($x, $y, $z, $deg));
+}
+ 
+// translate
+@mixin translate3d ($x, $y, $z) {
+	@include transform(translate3d($x, $y, $z));
+}
+
+@mixin animation($animation, $duration, $transition, $iteration, $mode, $state) {
+	animation-name: $animation;
+	animation-duration: $duration;
+	animation-timing-function: $transition;
+	animation-iteration-count: $iteration;
+	animation-fill-mode: $mode;
+	animation-play-state: $state;
+}
+
+@mixin transition($property, $duration, $function, $delay)
+	{
+	transition-property: $property;
+	transition-duration: $duration;
+	transition-timing-function: $function;
+	transition-delay: $delay;
+	}
+.jptb-top-panel-wrapper {
+	position: relative;
+	height: $top-panel-height;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+
+}
+.jptb-top-panel {
+	display: flex;
+	justify-content: space-between;
+	font-family: $font-family;
+	height: $top-panel-height;
+	line-height: $top-panel-height;
+	padding: 0 13px;
+	background-color: #333;
+	color: rgba(255, 255, 255, 0.9);
+	font-size: $top-panel-height * 0.7;
+	text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+	box-shadow: inset 0 2px 8px -2px #000;
+	text-transform: uppercase;
+	white-space: nowrap;
+	overflow: hidden;
+	.jptb-left, .jptb-right {flex: 0;}
+	.jptb-right {text-align: right; margin-left: 13px;}
+	.jptb-left {margin-right: 13px;}
+	.jptb-center {
+		flex: 1;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		transition: transform 1200ms;
+		.jptb-jackpot-item {
+			display: flex;
+			padding: 0 8px;
+			margin-bottom: 6px;
+			.jptb-jackpot-name {
+				margin-right: 11px;
+			}
+			.jptb-jackpot-counter {
+				font-size: round($top-panel-height * 0.56);
+				position: relative;
+				.jptb-jackpot-counter-wrapper {
+					display: flex;
+					overflow: hidden;
+					//background-image: linear-gradient(top, rgba(200, 200, 200, 0.2) 0%, rgba(200, 200, 200, 0.2) 40%, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 1) 55%, rgba(0, 0, 0, 1) 100%);
+					background-color: #222222;
+					box-shadow: inset 0 2px 8px -2px #000;
+					border-radius: 6px;
+					.jptb-jackpot-counter-cell {
+						width: $top-panel-height * 0.65;
+						height: $top-panel-height;
+						position: relative;
+						transform: rotateX(-12deg);
+						transform-style: preserve-3d;
+						border-right: 2px solid rgba(0, 0, 0, 0.36);
+						border-left: 1px solid rgba(255, 255, 255, 0.05);
+						margin-right: 4px;
+						box-shadow: 0px 0px 86px 0px rgba(125, 55, 5, 0.2);
+						& :nth-last-child {
+							border-right: 0px none;
+						}
+						& > div  {
+							margin: 0 auto;
+							height: $top-panel-height;
+							// width: $con;
+							transform-style: preserve-3d;
+							will-change: transform;
+							//@include transition(transform, 0ms, cubic-bezier(.7,.16,.3,.84), 500ms);
+							-webkit-transition-delay: 500ms;
+							transition-delay: 500ms;
+							-webkit-transition-timing-function: cubic-bezier(.7, .16, .3, .84);
+							transition-timing-function: cubic-bezier(.7, .16, .3, .84);
+							-webkit-transition-duration: 2000ms;
+							transition-duration: 2000ms;
+							-webkit-transition-property: -webkit-transform;
+							transition-property: -webkit-transform;
+							transition-property : transform;
+							transition-property : transform,-webkit-transform;
+							}
+							.jptb-plane {
+								position: absolute;
+								height: $top-panel-height;
+								width: 100%;
+								text-align: center;
+								text-shadow: 1px 2px 1px rgba(0, 0, 0, .9);
+								color: rgba(255, 255, 255, .2);
+								line-height: 1;
+								backface-visibility: hidden;
+							}
+						}
+					}
+				}
+			}
+		}
+}
+.jptb-top-panel .jptb-center .jptb-jackpot-item .jptb-jackpot-counter .jptb-jackpot-counter-wrapper .jptb-jackpot-counter-cell:nth-last-child(2),
+.jptb-top-panel .jptb-center .jptb-jackpot-item .jptb-jackpot-counter .jptb-jackpot-counter-wrapper .jptb-jackpot-counter-cell:nth-last-child(1) {
+	background-color: rgba(255, 255, 255, .06);
+}
+.jptb-top-panel .jptb-center .jptb-jackpot-item .jptb-jackpot-counter .jptb-jackpot-counter-wrapper .jptb-jackpot-counter-cell:nth-last-child(1) {
+	border-right: 0px none;
+	margin-right: 0;
+}
+
+
+@for $i from 0 through 9 {
+	.jptb-jackpot-counter .jptb-figure#{$i} {
+		@include transform(rotate3d(1, 0, 0, -$angle*$i) translate3d(0, 0, $deep));
+	}
+}
+
+/* win animation */
+
+.jptb-win  {
+	//order: -1 !important;
+	flex-basis: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	justify-content: center;
+	position: relative;
+	z-index: 100;
+	&:after {
+		z-index: 10;
+		content:"";
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 200%;
+		transform: translateX(0%);
+		background: linear-gradient(0% -15%, #655bef 0%, #fa28bf 20%, #ff4665 40%, #fbde4e 60%, #00fbea 80%, #555def 100%);
+		background: -moz-linear-gradient(0% -15%, #655bef 0%, #fa28bf 20%, #ff4665 40%, #fbde4e 60%, #00fbea 80%, #555def 100%);
+		background: -webkit-gradient(linear, 0% -15%, 100% 100%, color-stop(0, #655bef), color-stop(0.2, #fa28bf), color-stop(0.4, #ff4665), color-stop(0.6, #fbde4e), color-stop(0.8, #00fbea), color-stop(1, #555def));
+		-o-animation: anime 17.5s infinite;
+		-ms-animation: anime 17.5s infinite;
+		-moz-animation: anime 17.5s infinite;
+		-webkit-animation: anime 16s infinite;
+		z-index:-1;
+	}
+}
+
+@keyframes anime {
+	0%{
+		transform: translateX(0%);
+	}
+	50%{
+		transform: translateX(-150%);
+	}
+	100%{
+		transform: translateX(0%);
+	}
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.aim {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%,-50%,0);
+	font-size: 30vh;
+	-webkit-text-stroke: 0.1ch #996666;
+}
+

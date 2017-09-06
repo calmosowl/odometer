@@ -1,0 +1,13 @@
+# Global ignored dir or file
+# /node_modules/* and /bower_components/* ignored by default
+
+package.json*
+bower.json*
+gulpfile.js*
+
+# Ignore build files
+
+src/js/common.js*
+
+web/*
+!web/js/common.js
