@@ -1,0 +1,352 @@
+.jptb-top-panel {
+    box-sizing: border-box;
+}
+
+.jptb-top-panel * {
+    box-sizing: inherit;
+}
+
+.jptb-top-panel *:before,
+.jptb-top-panel *:after {
+    box-sizing: inherit;
+}
+
+.jptb-top-panel-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 184px;
+    margin: 0;
+    padding: 0;
+}
+
+.jptb-top-panel {
+    font-family: Inconsolata, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-size: 128.8px;
+    line-height: 184px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+    overflow: hidden;
+    height: 184px;
+    padding: 0 13px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .9);
+    background-color: #333;
+    box-shadow: inset 0 2px 8px -2px #000;
+    text-shadow: 0 -1px rgba(0, 0, 0, .9);
+
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.jptb-top-panel .jptb-left,
+.jptb-top-panel .jptb-right {
+            flex: 0;
+
+    -webkit-box-flex: 0;
+    -webkit-flex: 0;
+        -ms-flex: 0;
+}
+
+.jptb-top-panel .jptb-right {
+    margin-left: 13px;
+    text-align: right;
+}
+
+.jptb-top-panel .jptb-left {
+    margin-right: 13px;
+}
+
+.jptb-top-panel .jptb-center {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+            flex: 1;
+    -webkit-transition: -webkit-transform 1200ms;
+            transition: -webkit-transform 1200ms;
+            transition:         transform 1200ms;
+            transition:         transform 1200ms, -webkit-transform 1200ms;
+
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.jptb-top-panel .jptb-center .jptb-jackpot-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+    margin-bottom: 6px;
+    padding: 0 8px;
+}
+
+.jptb-top-panel .jptb-center .jptb-jackpot-item .jptb-jackpot-name {
+    margin-right: 11px;
+}
+
+.jptb-top-panel .jptb-center .jptb-jackpot-item .jptb-jackpot-counter {
+    font-size: 103px;
+    position: relative;
+}
+
+.jptb-top-panel .jptb-center .jptb-jackpot-item .jptb-jackpot-counter .jptb-jackpot-counter-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: #222;
+    box-shadow: inset 0 2px 8px -2px #000;
+}
+
+.jptb-top-panel .jptb-center .jptb-jackpot-item .jptb-jackpot-counter .jptb-jackpot-counter-wrapper .jptb-jackpot-counter-cell {
+    position: relative;
+    width: 119.6px;
+    height: 184px;
+    margin-right: 4px;
+    -webkit-transform: rotateX(-12deg);
+            transform: rotateX(-12deg);
+    border-right: 2px solid rgba(0, 0, 0, .36);
+    border-left: 1px solid rgba(255, 255, 255, .05);
+    box-shadow: 0 0 86px 0 rgba(125, 55, 5, .2);
+
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+.jptb-top-panel .jptb-center .jptb-jackpot-item .jptb-jackpot-counter .jptb-jackpot-counter-wrapper .jptb-jackpot-counter-cell :nth-last-child {
+    border-right: 0 none;
+}
+
+.jptb-top-panel .jptb-center .jptb-jackpot-item .jptb-jackpot-counter .jptb-jackpot-counter-wrapper .jptb-jackpot-counter-cell > div {
+    height: 184px;
+    margin: 0 auto;
+    -webkit-transition-delay: 500ms;
+            transition-delay: 500ms;
+    -webkit-transition-timing-function: cubic-bezier(.7, .16, .3, .84);
+            transition-timing-function: cubic-bezier(.7, .16, .3, .84);
+    -webkit-transition-duration: 2000ms;
+            transition-duration: 2000ms;
+    -webkit-transition-property: -webkit-transform;
+            transition-property: -webkit-transform;
+            transition-property:         transform;
+            transition-property:         transform, -webkit-transform;
+            transition-property:         transform,-webkit-transform;
+
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.jptb-top-panel .jptb-center .jptb-jackpot-item .jptb-jackpot-counter .jptb-jackpot-counter-wrapper .jptb-jackpot-counter-cell .jptb-plane {
+    line-height: 1;
+    position: absolute;
+    width: 100%;
+    height: 184px;
+    text-align: center;
+    color: rgba(255, 255, 255, .2);
+    text-shadow: 1px 2px 1px rgba(0, 0, 0, .9);
+
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+
+.jptb-top-panel .jptb-center .jptb-jackpot-item .jptb-jackpot-counter .jptb-jackpot-counter-wrapper .jptb-jackpot-counter-cell:nth-last-child(2),
+.jptb-top-panel .jptb-center .jptb-jackpot-item .jptb-jackpot-counter .jptb-jackpot-counter-wrapper .jptb-jackpot-counter-cell:nth-last-child(1) {
+    background-color: rgba(255, 255, 255, .06);
+}
+
+.jptb-top-panel .jptb-center .jptb-jackpot-item .jptb-jackpot-counter .jptb-jackpot-counter-wrapper .jptb-jackpot-counter-cell:nth-last-child(1) {
+    margin-right: 0;
+    border-right: 0 none;
+}
+
+.jptb-jackpot-counter .jptb-figure0 {
+    -webkit-transform: rotate3d(1, 0, 0, 0deg) translate3d(0, 0, 180px);
+            transform: rotate3d(1, 0, 0, 0deg) translate3d(0, 0, 180px);
+}
+
+.jptb-jackpot-counter .jptb-figure1 {
+    -webkit-transform: rotate3d(1, 0, 0, -36deg) translate3d(0, 0, 180px);
+            transform: rotate3d(1, 0, 0, -36deg) translate3d(0, 0, 180px);
+}
+
+.jptb-jackpot-counter .jptb-figure2 {
+    -webkit-transform: rotate3d(1, 0, 0, -72deg) translate3d(0, 0, 180px);
+            transform: rotate3d(1, 0, 0, -72deg) translate3d(0, 0, 180px);
+}
+
+.jptb-jackpot-counter .jptb-figure3 {
+    -webkit-transform: rotate3d(1, 0, 0, -108deg) translate3d(0, 0, 180px);
+            transform: rotate3d(1, 0, 0, -108deg) translate3d(0, 0, 180px);
+}
+
+.jptb-jackpot-counter .jptb-figure4 {
+    -webkit-transform: rotate3d(1, 0, 0, -144deg) translate3d(0, 0, 180px);
+            transform: rotate3d(1, 0, 0, -144deg) translate3d(0, 0, 180px);
+}
+
+.jptb-jackpot-counter .jptb-figure5 {
+    -webkit-transform: rotate3d(1, 0, 0, -180deg) translate3d(0, 0, 180px);
+            transform: rotate3d(1, 0, 0, -180deg) translate3d(0, 0, 180px);
+}
+
+.jptb-jackpot-counter .jptb-figure6 {
+    -webkit-transform: rotate3d(1, 0, 0, -216deg) translate3d(0, 0, 180px);
+            transform: rotate3d(1, 0, 0, -216deg) translate3d(0, 0, 180px);
+}
+
+.jptb-jackpot-counter .jptb-figure7 {
+    -webkit-transform: rotate3d(1, 0, 0, -252deg) translate3d(0, 0, 180px);
+            transform: rotate3d(1, 0, 0, -252deg) translate3d(0, 0, 180px);
+}
+
+.jptb-jackpot-counter .jptb-figure8 {
+    -webkit-transform: rotate3d(1, 0, 0, -288deg) translate3d(0, 0, 180px);
+            transform: rotate3d(1, 0, 0, -288deg) translate3d(0, 0, 180px);
+}
+
+.jptb-jackpot-counter .jptb-figure9 {
+    -webkit-transform: rotate3d(1, 0, 0, -324deg) translate3d(0, 0, 180px);
+            transform: rotate3d(1, 0, 0, -324deg) translate3d(0, 0, 180px);
+}
+
+/* win animation */
+
+.jptb-win {
+    position: relative;
+    z-index: 100;
+    margin-right: auto;
+    margin-left: auto;
+
+    -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.jptb-win:after {
+    position: absolute;
+    z-index: 10;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    content: '';
+    -webkit-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-animation: anime 16s infinite;
+       -moz-animation: anime 17.5s infinite;
+        -ms-animation: anime 17.5s infinite;
+         -o-animation: anime 17.5s infinite;
+    background: -webkit-linear-gradient(0% -15%, #655bef 0%, #fa28bf 20%, #ff4665 40%, #fbde4e 60%, #00fbea 80%, #555def 100%);
+    background:         linear-gradient(0% -15%, #655bef 0%, #fa28bf 20%, #ff4665 40%, #fbde4e 60%, #00fbea 80%, #555def 100%);
+    background:    -moz-linear-gradient(0% -15%, #655bef 0%, #fa28bf 20%, #ff4665 40%, #fbde4e 60%, #00fbea 80%, #555def 100%);
+    background: -webkit-gradient(linear, 0% -15%, 100% 100%, color-stop(0, #655bef), color-stop(.2, #fa28bf), color-stop(.4, #ff4665), color-stop(.6, #fbde4e), color-stop(.8, #00fbea), color-stop(1, #555def));
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+            animation-name: fadeIn;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+}
+
+.aim {
+    font-size: 30vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0);
+
+    -webkit-text-stroke: .1ch #966;
+}
+
+@-webkit-keyframes anime {
+    0% {
+        -webkit-transform: translateX(0%);
+                transform: translateX(0%);
+    }
+
+    50% {
+        -webkit-transform: translateX(-150%);
+                transform: translateX(-150%);
+    }
+
+    100% {
+        -webkit-transform: translateX(0%);
+                transform: translateX(0%);
+    }
+}
+
+@keyframes anime {
+    0% {
+        -webkit-transform: translateX(0%);
+                transform: translateX(0%);
+    }
+
+    50% {
+        -webkit-transform: translateX(-150%);
+                transform: translateX(-150%);
+    }
+
+    100% {
+        -webkit-transform: translateX(0%);
+                transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/*# sourceMappingURL=style.css.map */
