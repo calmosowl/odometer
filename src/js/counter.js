@@ -5,7 +5,7 @@ function WidgetTopPanel(options){
 	this.left = options&&options.left ? options.left : '';
 	this.right = options&&options.right ? options.right : '';
 	this.counters = options&&options.counters ? options.counters : '{}';
-
+	this.slider_enable = options&&options ? options.counters : 'on';
 	this.jsonData = JSON.parse(that.counters);
 	
 	let elem;
@@ -78,28 +78,30 @@ function WidgetTopPanel(options){
 	/* slider */
 	let parent, left, right;
 	let slider = (y) => {
-		parent = document.querySelector('.jptb-center');
-		left = document.querySelector('.jptb-left');
-		right = document.querySelector('.jptb-right');
+		if(this.slider_enable == 'on') {
+			parent = document.querySelector('.jptb-center');
+			left = document.querySelector('.jptb-left');
+			right = document.querySelector('.jptb-right');
 
-		if(window.innerWidth < 575 && left.parentElement !== parent){
-			parent.appendChild(left);
-			parent.appendChild(right);
-		}
-		let widgetHeight = parent.clientHeight;
-		let	arr = Array.from(parent.children),
-				parentWidth = parent.clientWidth,
-				itemsWidth = arr.reduce(function(sum, current) {
-					return sum + current.clientWidth;
-				}, 0);
+			if(window.innerWidth < 575 && left.parentElement !== parent){
+				parent.appendChild(left);
+				parent.appendChild(right);
+			}
+			let widgetHeight = parent.clientHeight;
+			let	arr = Array.from(parent.children),
+					parentWidth = parent.clientWidth,
+					itemsWidth = arr.reduce(function(sum, current) {
+						return sum + current.clientWidth;
+					}, 0);
 
-		let scrollHeight = +parent.scrollHeight;
-		if(itemsWidth > parent.clientWidth || window.innerWidth < 575) {
-			if (y < scrollHeight) {
-				parent.style.transform = "translateY(-" + y + "px)";
-				y += 40;
-				setTimeout(slider, 8000, y);
-			} else goDown(y - 40);
+			let scrollHeight = +parent.scrollHeight;
+			if(itemsWidth > parent.clientWidth || window.innerWidth < 575) {
+				if (y < scrollHeight) {
+					parent.style.transform = "translateY(-" + y + "px)";
+					y += 40;
+					setTimeout(slider, 8000, y);
+				} else goDown(y - 40);
+			}
 		}
 	}
 
@@ -342,6 +344,7 @@ document.addEventListener("DOMContentLoaded", (ev) => {
 			container: 'topPanel',
 			left     : 'game',
 			right    : 'GO',
+			slider_enable: 'off',
 			counters : '[{"id": 1, "amount": 0}]'
 		});
 		panel.init();

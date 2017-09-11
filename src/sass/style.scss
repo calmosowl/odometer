@@ -10,10 +10,10 @@
 	box-sizing: inherit;
 }
 
-$top-panel-height: 184px;
+$top-panel-height: 20vmin;
 $font-family: Inconsolata, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 $con: 20px;
-$deep: $top-panel-height - 4px;
+$deep: $top-panel-height;
 $angle: 36deg;
 
 @mixin transform($transforms) {
@@ -85,7 +85,8 @@ $angle: 36deg;
 				margin-right: 11px;
 			}
 			.jptb-jackpot-counter {
-				font-size: round($top-panel-height * 0.56);
+				font-size: round($top-panel-height * 0.5);
+				//line-height: 1.2;
 				position: relative;
 				.jptb-jackpot-counter-wrapper {
 					display: flex;
@@ -95,10 +96,10 @@ $angle: 36deg;
 					box-shadow: inset 0 2px 8px -2px #000;
 					border-radius: 6px;
 					.jptb-jackpot-counter-cell {
-						width: $top-panel-height * 0.65;
+						width: 2ch;
 						height: $top-panel-height;
 						position: relative;
-						transform: rotateX(-12deg);
+						//transform: rotateX(-12deg);
 						transform-style: preserve-3d;
 						border-right: 2px solid rgba(0, 0, 0, 0.36);
 						border-left: 1px solid rgba(255, 255, 255, 0.05);
@@ -127,12 +128,11 @@ $angle: 36deg;
 							}
 							.jptb-plane {
 								position: absolute;
-								height: $top-panel-height;
+								//height: $top-panel-height;
 								width: 100%;
 								text-align: center;
 								text-shadow: 1px 2px 1px rgba(0, 0, 0, .9);
 								color: rgba(255, 255, 255, .2);
-								line-height: 1;
 								backface-visibility: hidden;
 							}
 						}
@@ -153,14 +153,13 @@ $angle: 36deg;
 
 @for $i from 0 through 9 {
 	.jptb-jackpot-counter .jptb-figure#{$i} {
-		@include transform(rotate3d(1, 0, 0, -$angle*$i) translate3d(0, 0, $deep));
+		@include transform(rotate3d(1, 0, 0, -$angle*$i) translate3d(0, 0, $deep * 0.8));
 	}
 }
 
 /* win animation */
 
 .jptb-win  {
-	//order: -1 !important;
 	flex-basis: 100%;
 	margin-left: auto;
 	margin-right: auto;
@@ -229,3 +228,8 @@ $angle: 36deg;
 	-webkit-text-stroke: 0.1ch #996666;
 }
 
+@media screen and (max-width: 768px) {
+	.jptb-right, .jptb-left {
+		display: none !important;
+	}
+}

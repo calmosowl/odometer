@@ -53,9 +53,9 @@ function getDateTime() {
 var path = {
 
     build: {
-        html:    'web/',
-        js:      'web/js/',
-        css:     'web/css/',
+        html:    './',
+        js:      './js/',
+        css:     './css/',
         img:     'web/images/',
         sprites: 'web/images/sprites',
         fonts:   'web/fonts/',
@@ -91,7 +91,7 @@ var path = {
 var option = {
 
     browserSync: {
-        server: './web',
+        server: './',
         tunnel: false,
         open: false,
         host: 'localhost',
@@ -167,10 +167,10 @@ var option = {
         options: {}
     },
 
-    mmq: {
-        log: true,
-        use_external: true
-    },
+    // mmq: {
+    //     log: true,
+    //     use_external: true
+    // },
 
     csscomb: 'csscomb.json',
 
@@ -215,16 +215,16 @@ gulp.task('build:js', function () {
 gulp.task('build:css', function (cb) {
     return gulp.src(path.src.style)
         .pipe($.plumber(option.plumber))
-        .pipe($.sourcemaps.init())
+        //.pipe($.sourcemaps.init())
         .pipe($.sass(option.sass))
         .pipe($.postcss(option.postcss))
-        .pipe(mmq(option.mmq))
+        //.pipe(mmq(option.mmq))
         .pipe($.csscomb(option.csscomb))
         .pipe($.sourcemaps.write('.'))
         .pipe(gulp.dest(path.build.css));
 });
 
-gulp.task('build:media', function () {
+/*gulp.task('build:media', function () {
     gulp.src(path.build.css + '*.responsive.css')
         .pipe($.plumber(option.plumber))
         .pipe($.sourcemaps.init())
@@ -233,7 +233,7 @@ gulp.task('build:media', function () {
         .pipe(gulp.dest(path.build.css));
 
     return del(path.build.css + '*.responsive.css');
-});
+});*/
 
 gulp.task('build:img', function () {
     return gulp.src(path.src.img)
@@ -280,7 +280,7 @@ gulp.task('watch', function(){
     });
 
     $.watch([path.watch.style], function(event, cb) {
-        return runSequence('build:css', 'build:media', reload);
+        return runSequence('build:css'/*, 'build:media'*/, reload);
     });
 
     $.watch([path.watch.js], function(event, cb) {
@@ -307,7 +307,7 @@ gulp.task('watch', function(){
 gulp.task('build:style', function (cb) {
     return runSequence(
         'build:css',
-        'build:media',
+       // 'build:media',
         cb
     );
 });

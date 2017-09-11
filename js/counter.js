@@ -1,12 +1,14 @@
 "use strict";
 
 function WidgetTopPanel(options) {
+	var _this = this;
+
 	var that = this;
 	this.elem = options.container;
 	this.left = options && options.left ? options.left : '';
 	this.right = options && options.right ? options.right : '';
 	this.counters = options && options.counters ? options.counters : '{}';
-
+	this.slider_enable = options && options ? options.counters : 'on';
 	this.jsonData = JSON.parse(that.counters);
 
 	var elem = void 0;
@@ -77,28 +79,30 @@ function WidgetTopPanel(options) {
 	    left = void 0,
 	    right = void 0;
 	var slider = function slider(y) {
-		parent = document.querySelector('.jptb-center');
-		left = document.querySelector('.jptb-left');
-		right = document.querySelector('.jptb-right');
+		if (_this.slider_enable == 'on') {
+			parent = document.querySelector('.jptb-center');
+			left = document.querySelector('.jptb-left');
+			right = document.querySelector('.jptb-right');
 
-		if (window.innerWidth < 575 && left.parentElement !== parent) {
-			parent.appendChild(left);
-			parent.appendChild(right);
-		}
-		var widgetHeight = parent.clientHeight;
-		var arr = Array.from(parent.children),
-		    parentWidth = parent.clientWidth,
-		    itemsWidth = arr.reduce(function (sum, current) {
-			return sum + current.clientWidth;
-		}, 0);
+			if (window.innerWidth < 575 && left.parentElement !== parent) {
+				parent.appendChild(left);
+				parent.appendChild(right);
+			}
+			var widgetHeight = parent.clientHeight;
+			var arr = Array.from(parent.children),
+			    parentWidth = parent.clientWidth,
+			    itemsWidth = arr.reduce(function (sum, current) {
+				return sum + current.clientWidth;
+			}, 0);
 
-		var scrollHeight = +parent.scrollHeight;
-		if (itemsWidth > parent.clientWidth || window.innerWidth < 575) {
-			if (y < scrollHeight) {
-				parent.style.transform = "translateY(-" + y + "px)";
-				y += 40;
-				setTimeout(slider, 8000, y);
-			} else goDown(y - 40);
+			var scrollHeight = +parent.scrollHeight;
+			if (itemsWidth > parent.clientWidth || window.innerWidth < 575) {
+				if (y < scrollHeight) {
+					parent.style.transform = "translateY(-" + y + "px)";
+					y += 40;
+					setTimeout(slider, 8000, y);
+				} else goDown(y - 40);
+			}
 		}
 	};
 
@@ -116,7 +120,7 @@ function WidgetTopPanel(options) {
 };
 
 function Odometer(options) {
-	var _this = this;
+	var _this2 = this;
 
 	var that = this;
 	var ANGLE = 36;
@@ -147,12 +151,12 @@ function Odometer(options) {
 		if (v > Math.pow(10, that.numRolls - 2)) {
 			that.setNumRolls(v);
 		}
-		_this.currentValue = v;
+		_this2.currentValue = v;
 		var tt = new Date();
 		that.coordinates.time.splice(0, 0, tt);
 		var dur = parseInt(that.currentValue * 100) * ANGLE;
 		that.controller(dur);
-		return _this.currentValue;
+		return _this2.currentValue;
 	};
 
 	this.setNumRolls = function (a) {
@@ -171,18 +175,18 @@ function Odometer(options) {
 	};
 
 	this.controller = function (rotate) {
-		_this.coordinates.rotate.splice(0, 0, rotate);
-		var dRotate = _this.coordinates.rotate[0] - _this.coordinates.rotate[1];
-		_this.coordinates.speed.splice(0, 0, parseInt(dRotate / (_this.tickLength / 1000)));
-		_this.coordinates.speed.length = _this.coordinates.speed.length > 4 ? 4 : _this.coordinates.speed.length;
-		_this.coordinates.speedAverage = _this.coordinates.speed.reduce(function (sum, current) {
+		_this2.coordinates.rotate.splice(0, 0, rotate);
+		var dRotate = _this2.coordinates.rotate[0] - _this2.coordinates.rotate[1];
+		_this2.coordinates.speed.splice(0, 0, parseInt(dRotate / (_this2.tickLength / 1000)));
+		_this2.coordinates.speed.length = _this2.coordinates.speed.length > 4 ? 4 : _this2.coordinates.speed.length;
+		_this2.coordinates.speedAverage = _this2.coordinates.speed.reduce(function (sum, current) {
 			return parseInt(sum + current);
-		}) / _this.coordinates.speed.length;
-		_this.coordinates.deviation = Math.sqrt(_this.coordinates.speed.reduce(function (a, b) {
+		}) / _this2.coordinates.speed.length;
+		_this2.coordinates.deviation = Math.sqrt(_this2.coordinates.speed.reduce(function (a, b) {
 			var dev = b - that.coordinates.speedAverage;
 			return a + dev * dev;
-		}) / _this.coordinates.speed.length) / 1000;
-		_this.coordinates.duration = _this.coordinates.deviation > 4 ? parseInt(dRotate / _this.coordinates.speedAverage * 1000) : _this.tickLength;
+		}) / _this2.coordinates.speed.length) / 1000;
+		_this2.coordinates.duration = _this2.coordinates.deviation > 4 ? parseInt(dRotate / _this2.coordinates.speedAverage * 1000) : _this2.tickLength;
 	};
 
 	this.transform = function (elemArr, val) {
@@ -193,11 +197,11 @@ function Odometer(options) {
 			var multiplier = parseInt(data / Math.pow(10, arr.length - i)),
 			    rotate = multiplier * ANGLE;
 
-			_this.coordinates.rBuffer[i] = _this.coordinates.rBuffer[i] ? rotate - _this.coordinates.rBuffer[i] : rotate;
+			_this2.coordinates.rBuffer[i] = _this2.coordinates.rBuffer[i] ? rotate - _this2.coordinates.rBuffer[i] : rotate;
 
-			if (_this.coordinates.rBuffer[i] > 0) {
+			if (_this2.coordinates.rBuffer[i] > 0) {
 				var bezier = 'cubic-bezier(.7, .16, .3, .84)';
-				that.setTransform(arr[i - 1], rotate, _this.coordinates.duration, _this.coordinates.delay, bezier);
+				that.setTransform(arr[i - 1], rotate, _this2.coordinates.duration, _this2.coordinates.delay, bezier);
 			}
 		}
 	};
@@ -262,7 +266,7 @@ function Odometer(options) {
 
 		var jackpotСurrency = document.createElement('div');
 		jackpotСurrency.className = 'jptb-jackpot-currency';
-		jackpotСurrency.textContent = _this.currency;
+		jackpotСurrency.textContent = _this2.currency;
 
 		var wrapper = document.createElement('div');
 		wrapper.className = 'jptb-jackpot-counter-wrapper';
@@ -344,6 +348,7 @@ document.addEventListener("DOMContentLoaded", function (ev) {
 			container: 'topPanel',
 			left: 'game',
 			right: 'GO',
+			slider_enable: 'off',
 			counters: '[{"id": 1, "amount": 0}]'
 		});
 		panel.init();

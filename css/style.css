@@ -14,21 +14,21 @@
 .jptb-top-panel-wrapper {
     position: relative;
     overflow: hidden;
-    height: 184px;
+    height: 20vmin;
     margin: 0;
     padding: 0;
 }
 
 .jptb-top-panel {
     font-family: Inconsolata, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    font-size: 128.8px;
-    line-height: 184px;
+    font-size: 14vmin;
+    line-height: 20vmin;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display:         flex;
     overflow: hidden;
-    height: 184px;
+    height: 20vmin;
     padding: 0 13px;
     white-space: nowrap;
     text-transform: uppercase;
@@ -98,7 +98,7 @@
 }
 
 .jptb-top-panel .jptb-center .jptb-jackpot-item .jptb-jackpot-counter {
-    font-size: 103px;
+    font-size: 10vmin;
     position: relative;
 }
 
@@ -115,11 +115,9 @@
 
 .jptb-top-panel .jptb-center .jptb-jackpot-item .jptb-jackpot-counter .jptb-jackpot-counter-wrapper .jptb-jackpot-counter-cell {
     position: relative;
-    width: 119.6px;
-    height: 184px;
+    width: 2ch;
+    height: 20vmin;
     margin-right: 4px;
-    -webkit-transform: rotateX(-12deg);
-            transform: rotateX(-12deg);
     border-right: 2px solid rgba(0, 0, 0, .36);
     border-left: 1px solid rgba(255, 255, 255, .05);
     box-shadow: 0 0 86px 0 rgba(125, 55, 5, .2);
@@ -133,7 +131,7 @@
 }
 
 .jptb-top-panel .jptb-center .jptb-jackpot-item .jptb-jackpot-counter .jptb-jackpot-counter-wrapper .jptb-jackpot-counter-cell > div {
-    height: 184px;
+    height: 20vmin;
     margin: 0 auto;
     -webkit-transition-delay: 500ms;
             transition-delay: 500ms;
@@ -153,10 +151,8 @@
 }
 
 .jptb-top-panel .jptb-center .jptb-jackpot-item .jptb-jackpot-counter .jptb-jackpot-counter-wrapper .jptb-jackpot-counter-cell .jptb-plane {
-    line-height: 1;
     position: absolute;
     width: 100%;
-    height: 184px;
     text-align: center;
     color: rgba(255, 255, 255, .2);
     text-shadow: 1px 2px 1px rgba(0, 0, 0, .9);
@@ -176,57 +172,56 @@
 }
 
 .jptb-jackpot-counter .jptb-figure0 {
-    -webkit-transform: rotate3d(1, 0, 0, 0deg) translate3d(0, 0, 180px);
-            transform: rotate3d(1, 0, 0, 0deg) translate3d(0, 0, 180px);
+    -webkit-transform: rotate3d(1, 0, 0, 0deg) translate3d(0, 0, 16vmin);
+            transform: rotate3d(1, 0, 0, 0deg) translate3d(0, 0, 16vmin);
 }
 
 .jptb-jackpot-counter .jptb-figure1 {
-    -webkit-transform: rotate3d(1, 0, 0, -36deg) translate3d(0, 0, 180px);
-            transform: rotate3d(1, 0, 0, -36deg) translate3d(0, 0, 180px);
+    -webkit-transform: rotate3d(1, 0, 0, -36deg) translate3d(0, 0, 16vmin);
+            transform: rotate3d(1, 0, 0, -36deg) translate3d(0, 0, 16vmin);
 }
 
 .jptb-jackpot-counter .jptb-figure2 {
-    -webkit-transform: rotate3d(1, 0, 0, -72deg) translate3d(0, 0, 180px);
-            transform: rotate3d(1, 0, 0, -72deg) translate3d(0, 0, 180px);
+    -webkit-transform: rotate3d(1, 0, 0, -72deg) translate3d(0, 0, 16vmin);
+            transform: rotate3d(1, 0, 0, -72deg) translate3d(0, 0, 16vmin);
 }
 
 .jptb-jackpot-counter .jptb-figure3 {
-    -webkit-transform: rotate3d(1, 0, 0, -108deg) translate3d(0, 0, 180px);
-            transform: rotate3d(1, 0, 0, -108deg) translate3d(0, 0, 180px);
+    -webkit-transform: rotate3d(1, 0, 0, -108deg) translate3d(0, 0, 16vmin);
+            transform: rotate3d(1, 0, 0, -108deg) translate3d(0, 0, 16vmin);
 }
 
 .jptb-jackpot-counter .jptb-figure4 {
-    -webkit-transform: rotate3d(1, 0, 0, -144deg) translate3d(0, 0, 180px);
-            transform: rotate3d(1, 0, 0, -144deg) translate3d(0, 0, 180px);
+    -webkit-transform: rotate3d(1, 0, 0, -144deg) translate3d(0, 0, 16vmin);
+            transform: rotate3d(1, 0, 0, -144deg) translate3d(0, 0, 16vmin);
 }
 
 .jptb-jackpot-counter .jptb-figure5 {
-    -webkit-transform: rotate3d(1, 0, 0, -180deg) translate3d(0, 0, 180px);
-            transform: rotate3d(1, 0, 0, -180deg) translate3d(0, 0, 180px);
+    -webkit-transform: rotate3d(1, 0, 0, -180deg) translate3d(0, 0, 16vmin);
+            transform: rotate3d(1, 0, 0, -180deg) translate3d(0, 0, 16vmin);
 }
 
 .jptb-jackpot-counter .jptb-figure6 {
-    -webkit-transform: rotate3d(1, 0, 0, -216deg) translate3d(0, 0, 180px);
-            transform: rotate3d(1, 0, 0, -216deg) translate3d(0, 0, 180px);
+    -webkit-transform: rotate3d(1, 0, 0, -216deg) translate3d(0, 0, 16vmin);
+            transform: rotate3d(1, 0, 0, -216deg) translate3d(0, 0, 16vmin);
 }
 
 .jptb-jackpot-counter .jptb-figure7 {
-    -webkit-transform: rotate3d(1, 0, 0, -252deg) translate3d(0, 0, 180px);
-            transform: rotate3d(1, 0, 0, -252deg) translate3d(0, 0, 180px);
+    -webkit-transform: rotate3d(1, 0, 0, -252deg) translate3d(0, 0, 16vmin);
+            transform: rotate3d(1, 0, 0, -252deg) translate3d(0, 0, 16vmin);
 }
 
 .jptb-jackpot-counter .jptb-figure8 {
-    -webkit-transform: rotate3d(1, 0, 0, -288deg) translate3d(0, 0, 180px);
-            transform: rotate3d(1, 0, 0, -288deg) translate3d(0, 0, 180px);
+    -webkit-transform: rotate3d(1, 0, 0, -288deg) translate3d(0, 0, 16vmin);
+            transform: rotate3d(1, 0, 0, -288deg) translate3d(0, 0, 16vmin);
 }
 
 .jptb-jackpot-counter .jptb-figure9 {
-    -webkit-transform: rotate3d(1, 0, 0, -324deg) translate3d(0, 0, 180px);
-            transform: rotate3d(1, 0, 0, -324deg) translate3d(0, 0, 180px);
+    -webkit-transform: rotate3d(1, 0, 0, -324deg) translate3d(0, 0, 16vmin);
+            transform: rotate3d(1, 0, 0, -324deg) translate3d(0, 0, 16vmin);
 }
 
 /* win animation */
-
 .jptb-win {
     position: relative;
     z-index: 100;
@@ -264,6 +259,60 @@
     background: -webkit-gradient(linear, 0% -15%, 100% 100%, color-stop(0, #655bef), color-stop(.2, #fa28bf), color-stop(.4, #ff4665), color-stop(.6, #fbde4e), color-stop(.8, #00fbea), color-stop(1, #555def));
 }
 
+@-webkit-keyframes anime {
+    0% {
+        -webkit-transform: translateX(0%);
+                transform: translateX(0%);
+    }
+    50% {
+        -webkit-transform: translateX(-150%);
+                transform: translateX(-150%);
+    }
+    100% {
+        -webkit-transform: translateX(0%);
+                transform: translateX(0%);
+    }
+}
+
+@keyframes anime {
+    0% {
+        -webkit-transform: translateX(0%);
+                transform: translateX(0%);
+    }
+    50% {
+        -webkit-transform: translateX(-150%);
+                transform: translateX(-150%);
+    }
+    100% {
+        -webkit-transform: translateX(0%);
+                transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 .fadeIn {
     -webkit-animation-name: fadeIn;
             animation-name: fadeIn;
@@ -287,66 +336,9 @@
     -webkit-text-stroke: .1ch #966;
 }
 
-@-webkit-keyframes anime {
-    0% {
-        -webkit-transform: translateX(0%);
-                transform: translateX(0%);
-    }
-
-    50% {
-        -webkit-transform: translateX(-150%);
-                transform: translateX(-150%);
-    }
-
-    100% {
-        -webkit-transform: translateX(0%);
-                transform: translateX(0%);
+@media screen and (max-width: 768px) {
+    .jptb-right,
+    .jptb-left {
+        display: none !important;
     }
 }
-
-@keyframes anime {
-    0% {
-        -webkit-transform: translateX(0%);
-                transform: translateX(0%);
-    }
-
-    50% {
-        -webkit-transform: translateX(-150%);
-                transform: translateX(-150%);
-    }
-
-    100% {
-        -webkit-transform: translateX(0%);
-                transform: translateX(0%);
-    }
-}
-
-@-webkit-keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-/*# sourceMappingURL=style.css.map */
